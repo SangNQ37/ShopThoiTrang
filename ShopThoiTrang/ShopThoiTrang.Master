@@ -1,0 +1,318 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ShopThoiTrang.master.cs" Inherits="ShopThoiTrang.ShopThoiTrang" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+
+    <link href="css/trangchucss.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link rel="SHORTCUT ICON" href="images/logo-6040-60580.png" type="image/x-icon" />
+    <link href="css/slick.css" rel="stylesheet" />
+    <link href="css/slick-theme.css" rel="stylesheet" />
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/j-query.js"></script>
+    <script src="js/jquery-latest.pack.js"></script>
+    <script src="js/jcarousellite_1.0.1c4.js"></script>
+    <script src="js/jquery.vticker.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.news-container').vTicker({
+                speed: 500,
+                pause: 3000,
+                animation: 'fade',
+                mousePause: true,
+                showItems: 3
+            });
+        });
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+            <div class="header">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <a href="https://www.facebook.com/">
+                                    <img src="images/fb.png" alt="Facebook">
+                                </a>
+                                <a href="https://www.facebook.com/">
+                                    <img src="images/gg.png" alt="Facebook">
+                                </a>
+                                <a href="https://www.facebook.com/">
+                                    <img src="images/tw.png" alt="Facebook">
+                                </a>
+                                <a href="https://www.facebook.com/">
+                                    <img src="images/ytb.png" alt="Facebook">
+                                </a>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="reg">
+                                    <%--<a href="#">
+											<span>Giỏ hàng(0)</span>
+										</a>--%>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Giỏ hàng(<asp:Label ID="lblslgiohang" runat="server" ClientIDMode="Static" Text="0"></asp:Label>)</asp:LinkButton>
+                                    &nbsp;&nbsp;|&nbsp;&nbsp;
+										<%--<a href="#">--%>
+                                    <%--<span>Đăng kí</span>--%>
+                                    <asp:LinkButton ID="btndangki" runat="server" OnClick="btndangki_Click">Đăng kí</asp:LinkButton>
+                                    <%--<asp:Button ID="btndangki" runat="server" Text="Đăng kí" />--%>
+                                    <%--</a>--%>
+                                    &nbsp;&nbsp;|&nbsp;&nbsp;
+										<%--<a href="#">--%>
+                                    <asp:LinkButton ID="btndangnhap" runat="server" OnClick="btndangnhap_Click">Đăng nhập</asp:LinkButton>
+
+                                    <%--<span>Đăng nhập</span>--%>
+                                    <%--</a>--%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix">
+                </div>
+                <div class="wap_menu">
+                    <div class="container">
+                        <%--<div class="row">--%>
+                        <div class="menu">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <a href="TrangChu.aspx">
+                                        <img src="images/logo2.png" alt="Logo">
+                                    </a>
+                                </div>
+                                <div class="col-sm-8 smoothmenu">
+                                    <ul>
+                                        <li>
+                                            <a href="TrangChu.aspx">Trang chủ
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Giới thiệu
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Sản phẩm
+                                            </a>
+                                            <ul class="sub__menu">
+                                                <li>
+                                                    <a href="#">Váy đầm và set bộ</a>
+
+                                                    <ul class="sub__menu">
+                                                        <li>
+                                                            <a href="#">Đầm liền</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">áo khoác</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Đầm khuyến mại</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="Tintuc.aspx">Tin tức
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="BanDo.aspx">Bản đồ
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="Lienhe.aspx">Liên hệ
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-2">
+                                    <div class="tel">
+                                        <span>Hotline:</span>
+                                        01648818178
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%--</div>--%>
+                    </div>
+                </div>
+                <div class="under_menu">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="under_item" style="background: url(images/doihang.png) no-repeat left center;">
+                                    <a href="#">HỖ TRỢ ĐỔI TRẢ HÀNG
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="under_item" style="background: url(images/giaohang.png) no-repeat left center;">
+                                    <a href="#">GIAO HÀNG TOÀN QUỐC
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="under_item" style="background: url(images/httt.png) no-repeat left center;">
+                                    <a href="#">THANH TOÁN NHẬN HÀNG
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div id="search">
+                                    <asp:TextBox ID="txtsearch" type="text" placeholder="Nhập từ khóa tìm kiếm..." runat="server"></asp:TextBox>
+                                    <div style="margin: -29px 195px;">
+                                        <asp:ImageButton ID="btnSearch" runat="server" src="images/search.png" OnClick="btnSearch_Click" Height="28px" Width="29px" Style="border: none;" />
+                                    </div>
+
+                                    <%--<img src="images/search.png" alt="Search">--%>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+                </div>
+            <asp:ContentPlaceHolder ID="Content" runat="server">
+               
+            </asp:ContentPlaceHolder>
+             
+            <div id="fb-root"></div>
+            <div id="Div1"></div>
+            <script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1838823719729580";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+            </script>
+            <div class="footer">
+                <div class="footer_content">
+                    <div class="container">
+                        <div class="col-md-4">
+                            <div class="title_footer">
+                                <h1 style="border-bottom: 1px solid #a7a7a7">TIN TỨC & KHUYẾN MẠI MỚI NHẤT</h1>
+                            </div>
+                            <div class="first-new">
+                                <asp:Repeater ID="rptTinTucMoiNhat" runat="server">
+                                    <ItemTemplate>
+
+                                        <a href="ChiTietTinTuc.aspx?Id=<%# Eval("Id")%>">
+                                            <img src="<%# Eval("urlHinhAnh")%>">
+                                        </a>
+                                        &nbsp;&nbsp;
+                                            <div style="margin-top: -12px;">
+                                                <a href="ChiTietTinTuc.aspx?Id=<%# Eval("Id")%>" style="font-weight: bold; font-size: 14px; color: #443d45;"><%# Eval("tieuDe") %>
+                                                </a>
+                                                <p><%# Eval("tomtat").ToString().Length<=200?Eval("tomtat"):Eval("tomtat").ToString().Substring(0,200)+"..." %></p>
+                                            </div>
+
+                                    </ItemTemplate>
+                                </asp:Repeater>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="news">
+                                <%--<div style="border-bottom: 1px solid #a7a7a7;">--%>
+                                <div class="news-container" style="height: 100%">
+                                    <ul style="height: 100%">
+                                        <asp:Repeater ID="rptTinTuc" runat="server">
+                                            <ItemTemplate>
+                                                <li>
+                                                    <div class="thumb" style="padding-top: 10px;">
+                                                        <img src="<%# Eval("urlHinhAnh")%>">
+                                                    </div>
+                                                    <div class="info" style="padding: 10px 10px;">
+                                                        <a href="ChiTietTinTuc.aspx?Id=<%# Eval("Id")%>" style="color: black; font-size: 15px;"><%# Eval("tieuDe") %></a>
+                                                        <p style="padding-top: 10px;"><%# Eval("tomtat").ToString().Length<=100?Eval("tomtat"):Eval("tomtat").ToString().Substring(0,100)+"..." %> </p>
+                                                    </div>
+                                                    <div class="clr"></div>
+                                                </li>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </ul>
+                                    <%--<li>
+                                            <div class="thumb">
+                                                <img src="images/ak52c_logo1768_200x260.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <a href="http://2cweb.vn/news/html-css/16-kieu-shadows-ma-ban-khong-the-bo-qua-10-23.html">BÍ KÍP CHỌN MÀU TRANG PHỤC PHÙ HỢP VỚI MÀU DA</a>
+                                                <p>Không phải ai cũng có làn da trắng hồng để thỏa sức chọn bất cứ màu sắc trang phục nào mình thích.</p>
+                                            </div>
+                                            <div class="clr"></div>
+
+                                        </li>
+                                        <li>
+                                            <div class="thumb">
+                                                <img src="images/timthumb.jpg">
+                                            </div>
+                                            <div class="info">
+                                                <a href="http://2cweb.vn/news/html-css/16-kieu-shadows-ma-ban-khong-the-bo-qua-10-23.html">BÍ KÍP CHỌN MÀU TRANG PHỤC PHÙ HỢP VỚI MÀU DA</a>
+                                                <p>Không phải ai cũng có làn da trắng hồng để thỏa sức chọn bất cứ màu sắc trang phục nào mình thích.</p>
+                                            </div>
+                                            <div class="clr"></div>
+                                        </li>--%>
+                                </div>
+                            </div>
+                            <%--</div>--%>
+                        </div>
+                        <div class="col-md-4" style="margin-top: 60px;">
+                            <div class="fb-page" data-href="https://www.facebook.com/baucuteshop/?ref=aymt_homepage_panel" data-tabs="timeline" data-width="300" data-height="340" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                                <blockquote cite="https://www.facebook.com/baucuteshop/?ref=aymt_homepage_panel" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/baucuteshop/?ref=aymt_homepage_panel">Bẩu Store</a></blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="end">
+                    <div class="container" style="margin-top: 63px;">
+                        <div class="col-md-4">
+                            <div class="footer_container">
+                                <h3>Bẩu Store</h3>
+                                <p style="background: url(images/loca.png) no-repeat left center">Địa chỉ: Thọ Sơn, Yên Thọ , Đông Triều , Quảng Ninh</p>
+                                <p style="background: url(images/phone.png) no-repeat left center">Điện thoại: 01648818178</p>
+                                <p style="background: url(images/mail.png) no-repeat left center">Email: huhuucuong1695@gmail.com  </p>
+                                <p style="background: url(images/web.png) no-repeat left center">Website: https://www.facebook.com/baucuteshop/</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer_container">
+                                <h3>QUY ĐỊNH & CHÍNH SÁCH</h3>
+                                <p><a href="#" style="color: #a7a7a7">QĐ đổi hàng và hoàn trả tiền</a></p>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="footer_container">
+
+                                <h3>Hỗ trợ online</h3>
+                                <div style="line-height: 31px; color: white;">
+                                    <span>Số người đang Online:</span>
+                                    <asp:Label ID="lblsonguoiOnline" runat="server" Text=""></asp:Label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>
